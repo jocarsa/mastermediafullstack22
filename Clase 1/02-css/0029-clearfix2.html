@@ -68,11 +68,21 @@
                 height:300px;
                 background:rgb(150,150,255);
             }
-            #banner h3{
+            main #banner h3{
                 text-align:center;
                 padding:10px;
                 color:white;
                 font-size:40px;
+            }
+            main #noticias article{
+                width:33.3%;
+                float:left;
+            }
+            main #noticias article img{
+                width:100%;
+            }
+            .clearfix{
+                clear:both;
             }
         </style>
         <link rel="Stylesheet" href="estilo.css">
@@ -124,6 +134,8 @@
                         <p>Título de la <span>imagen</span></p>
                     </div>
                 </article>
+                <!-- clearfix -->
+                <div class="clearfix"></div>
             </section>
         </main>
         <footer></footer>
