@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <script>
+            var numero = 3.67675756;
+            nuevonumero = numero*100;
+            redondeo = Math.round(nuevonumero);
+            nuevonumero2 = redondeo/100;
+            console.log(nuevonumero2);
+            
+            function redondeaNumero(numero,decimales){
+                var numerooriginal = numero;
+                var numerodecimales = decimales;
+                var factor = Math.pow(10,numerodecimales);
+                var multiplicado = numerooriginal*factor;
+                var redondeo = Math.round(multiplicado);
+                var dividido = redondeo/factor;
+                return dividido;
+            }
+            
+            function redondeaNumeroModoPro(numero,decimales){
+                return Math.round(numero*Math.pow(10,decimales))/Math.pow(10,decimales);
+            }
+            
+            document.write(redondeaNumeroModoPro(3.5423534,3))
+            document.write('<br>')
+            document.write(redondeaNumeroModoPro(3.5423534,5))
+        </script>
+        
+    </head>
+    <body>
+        
+    </body>
+</html>
