@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="jquery-3.6.1.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("button").click(function(){
+                    valor = $(this).attr("valor")
+                    console.log(valor)
+                    $("#resultado").append(valor)
+                })
+            })
+        </script>
+        <style>
+            @font-face {
+              font-family: lcd;
+              src: url(lcddot_tr.ttf);
+            }
+            table tr td{
+                text-align:center;
+            }
+            table button{
+                border:none;
+                width:20px;
+                height:20px;
+                text-align:center;
+                border-radius:20px;
+                box-shadow:0px 2px 4px rgba(0,0,0,0.3);
+                background: rgb(113,113,113);
+                background: linear-gradient(0deg, rgba(113,113,113,1) 0%, rgba(176,176,176,1) 35%, rgba(255,255,255,1) 100%);
+                border:1px solid white;
+            }
+            #resultado{
+                background:rgb(200,255,200);
+                border-radius:5px;
+                text-align:right;
+                font-family: lcd,sans-serif;
+                box-shadow:0px 2px 4px rgba(0,0,0,0.3) inset;
+                color:black;
+                height:20px;
+            }
+            #calculadora{
+                background:rgb(220,220,220);
+                border-radius:5px;
+                width:150px;
+                box-shadow:0px 2px 4px rgba(0,0,0,0.3);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="calculadora">
+            <table border=0 width=100%>
+                <tr><td colspan=4 id="resultado"></td></tr>
+                <tr>
+                    <td><button valor="7">7</button></td>
+                    <td><button valor="8">8</button></td>
+                    <td><button valor="9">9</button></td>
+                    <td><button valor="/">/</button></td>
+                </tr>
+                <tr>
+                    <td><button valor="4">4</button></td>
+                    <td><button valor="5">5</button></td>
+                    <td><button valor="6">6</button></td>
+                    <td><button valor="*">x</button></td>
+                </tr>
+                <tr>
+                    <td><button valor="1">1</button></td>
+                    <td><button valor="2">2</button></td>
+                    <td><button valor="3">3</button></td>
+                    <td><button valor="+">+</button></td>
+                </tr>
+                <tr>
+                    <td><button></button></td>
+                    <td><button valor="0">0</button></td>
+                    <td><button valor="=">=</button></td>
+                    <td><button valor="-">-</button></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
