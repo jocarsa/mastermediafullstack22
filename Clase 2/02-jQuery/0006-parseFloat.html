@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="jquery-3.6.1.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                // Cuando sobre el boton hagas click
+                $("#miboton").click(function(){
+                    var primeroperando = $("#primeroperando").val()
+                    var segundooperando = $("#segundooperando").val()
+                    var resultado = parseFloat(primeroperando) + parseFloat(segundooperando)
+                    $("#resultado").html(resultado)
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <input type="text" id="primeroperando"><br>
+        <input type="text" id="segundooperando"><br>
+        <div id="resultado"></div>
+        <button id="miboton">Resuelve</button><br>
+    </body>
+</html>

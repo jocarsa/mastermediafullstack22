@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="jquery-3.6.1.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                // Cuando sobre el boton hagas click
+                $("#miboton").click(function(){
+                    var primeroperando = $("#primeroperando").val()
+                    var segundooperando = $("#segundooperando").val()
+                    var operacion = $("#operacion").val()
+                    switch(operacion){
+                        case "+":
+                            resultado = parseFloat(primeroperando) + parseFloat(segundooperando)
+                            break;
+                        case "-":
+                            resultado = parseFloat(primeroperando) - parseFloat(segundooperando)
+                            break;
+                        case "*":
+                            resultado = parseFloat(primeroperando) * parseFloat(segundooperando)
+                            break;
+                        case "/":
+                            resultado = parseFloat(primeroperando) / parseFloat(segundooperando)
+                            break;
+                        default:
+                            resultado = "operador no válido"
+                           }
+                     
+                    $("#resultado").html(resultado)
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <input type="text" id="primeroperando"><br>
+        <input type="text" id="operacion"><br>
+        <input type="text" id="segundooperando"><br>
+        <div id="resultado"></div>
+        <button id="miboton">Resuelve</button><br>
+    </body>
+</html>
