@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <script>
+            $.ajax({
+                url: "0002-servidor.php?nombre=Jose",
+                success: function(e){console.log(e);},
+                timeout: 4000,
+                error: function(){console.log("han habido problemas");}
+              });
+        </script>
+    </body>
+</html>

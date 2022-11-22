@@ -1,0 +1,19 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div id="reloj"></div>
+        <script>
+            var temporizador = setTimeout("bucle()",1000)
+            function bucle(){
+                var fecha = new Date()
+                var hora = fecha.getHours()
+                var minuto = fecha.getMinutes()
+                var segundo = fecha.getSeconds()
+                document.getElementById("reloj").innerHTML = hora+":"+minuto+":"+segundo
+                clearTimeout(temporizador)
+                temporizador = setTimeout("bucle()",1000)
+            }
+        </script>
+    </body>
+</html>

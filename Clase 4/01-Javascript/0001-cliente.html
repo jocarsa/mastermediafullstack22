@@ -1,0 +1,16 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            var ajax = new XMLHttpRequest();
+            ajax.open("GET", '0002-servidor.php');
+            ajax.send(); 
+            ajax.onload = function(e) {
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    console.log(ajax.responseText);
+                }
+            }
+        </script>
+    </body>
+</html>
