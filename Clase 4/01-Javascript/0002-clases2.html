@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <script>
+            class Persona{
+                constructor(){
+                    this.edad = 0;
+                    this.nombre = "";
+                    this.peso = 5;
+                    this.altura = 50;
+                }
+                diHola(){
+                    return "Hola, me llamo "+this.nombre
+                }
+                setNombre(nuevonombre){
+                    this.nombre = nuevonombre
+                }
+                getNombre(){
+                    return this.nombre;
+                }
+            }
+            
+            var Ana = new Persona();
+            Ana.setNombre("Ana")
+            
+            document.write(Ana.diHola());
+            document.write("que sepas que yo me llamo "+Ana.getNombre())
+            
+        </script>
+    </head>
+    <body>
+       
+    </body>
+</html>
