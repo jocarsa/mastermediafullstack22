@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <script>
+            $.ajax({
+            url: "0009-serializar.php",
+            success: function(e){
+                console.log(e)
+                explotado = e.split("|")
+                console.table(explotado)
+                console.table(explotado[0])
+            },
+            timeout: 4000,
+            error: function(){console.log("han habido problemas");}
+          });
+        </script>
+    </body>
+</html>

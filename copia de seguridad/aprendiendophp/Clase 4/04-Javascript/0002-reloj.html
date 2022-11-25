@@ -1,0 +1,14 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div id="reloj"></div>
+        <script>
+            var fecha = new Date()
+            var hora = fecha.getHours()
+            var minuto = fecha.getMinutes()
+            var segundo = fecha.getSeconds()
+            document.getElementById("reloj").innerHTML = hora+":"+minuto+":"+segundo
+        </script>
+    </body>
+</html>

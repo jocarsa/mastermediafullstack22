@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <script>
+            $.ajax({
+            url: "0011-phpgenerajson.php",
+            success: exito,
+            dataType:"json",
+            timeout: 4000,
+            error: mierror
+          });
+            
+            function exito(e){
+                console.table(e)
+            }
+            function mierror(){
+                console.log("han habido problemas");
+            }
+            
+        </script>
+    </body>
+</html>

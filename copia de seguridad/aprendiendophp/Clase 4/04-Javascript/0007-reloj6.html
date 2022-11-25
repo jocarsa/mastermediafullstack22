@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <div id="reloj">
+            <div id="manecillas">
+                <div id="horas"></div>
+                <div id="minutos"></div>
+                <div id="segundos"></div>
+            </div>
+            <div id="numeros"></div>
+        </div>
+        <script>
+            var temporizador = setTimeout("bucle()",1000)
+            function bucle(){
+                // Creo una fecha, porque de la fecha luego saco todo lo que quiero
+                var fecha = new Date()
+                // De la fecha, saco las horas, y me lo guardo en una variable
+                var hora = fecha.getHours()
+                // De la fecha, saco los minutos, y me lo guardo en una variable
+                var minuto = fecha.getMinutes()
+                // De la fecha, saco los segundos, y me lo guardo en una variable
+                var segundo = fecha.getSeconds()
+                
+                //////////////////// RELOJ CON NUMEROS //////////////////////
+                // Dentro de los numeros, pongo una cadena de caracteres enlazando las variables
+                document.getElementById("numeros").innerHTML = hora+":"+minuto+":"+segundo
+                
+                
+                //////////////////// RELOJ GRÁFICO //////////////////////
+                // Convierto las horas a grados sexagesimales
+                var angulohora = (360/24)*(hora%12)+90
+                // Convierto los minutos a grados sexagesimales
+                var angulominuto = (360/60)*minuto+90
+                // Convierto los segundos a grados sexagesimales
+                var angulosegundo = (360/60)*segundo+90
+                
+                // Selecciono la manecilla de las horas y la giro una serie de grados
+                document.getElementById("horas").style.transform = "rotate("+angulohora+"deg)"
+                document.getElementById("minutos").style.transform = "rotate("+angulominuto+"deg)"
+                document.getElementById("segundos").style.transform = "rotate("+angulosegundo+"deg)"
+                
+                // Limpio el temporizador
+                clearTimeout(temporizador)
+                // Vuelvo a llamar a la función dentro de un segundo
+                temporizador = setTimeout("bucle()",1000)
+            }
+        </script>
+    </body>
+</html>
