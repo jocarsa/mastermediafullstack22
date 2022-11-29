@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js" integrity="sha256-6XMVI0zB8cRzfZjqKcD01PBsAy3FlDASrlC8SxCpInY=" crossorigin="anonymous"></script>
+        <style>
+            #rojo{width:100px;height:100px;background:red;}
+            #verde{width:200px;height:200px;background:green;position:absolute;bottom:200px;right:200px;}
+        </style>
+        <script>
+            $(document).ready(function(){
+               $("#rojo").draggable(); 
+                $("#verde").droppable({
+                  drop: function( event, ui ) {
+                    console.log("soltado")
+                  }
+                })
+            })
+            
+        </script>
+    </head>
+    <body>
+       
+        <div id="verde"></div>
+         <div id="rojo"></div>
+    </body>
+</html>
