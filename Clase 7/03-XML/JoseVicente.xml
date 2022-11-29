@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+            <persona>
+                <datospersonales>
+                    <dato id="nombre">JoseVicente</dato>
+                    <dato id="apellidos">Carratala</dato>
+                </datospersonales>
+                <cursos>
+                    <mastermedia>
+                        <curso class="mastermedia">este es un curso</curso>
+                        <curso class="mastermedia">este es otro curso</curso>
+                    </mastermedia>
+                </cursos>
+            </persona>
+        

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+            <persona>
+                <datospersonales>
+                    <dato id="nombre">Juan</dato>
+                    <dato id="apellidos">Lopez</dato>
+                </datospersonales>
+                <cursos>
+                    <mastermedia>
+                        <curso class="mastermedia">el curso 1 de Juan</curso>
+                        <curso class="mastermedia">El curso 2 de Juan</curso>
+                    </mastermedia>
+                </cursos>
+            </persona>
+        

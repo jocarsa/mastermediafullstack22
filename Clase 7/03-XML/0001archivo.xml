@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persona>
+    <datospersonales>
+        <dato id="nombre">Jose Vicente</dato>
+        <dato id="apellidos">Carratala</dato>
+    </datospersonales>
+    <cursos>
+        <mastermedia>
+            <curso class="mastermedia">Full Stack</curso>
+            <curso class="mastermedia">Full Stack 2</curso>
+        </mastermedia>
+    </cursos>
+</persona>
