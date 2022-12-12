@@ -1,0 +1,16 @@
+Al cliente se le muestran los productos, el cliente puede pulsar para añadir un producto al carro - productos.php
+
+El cliente entra en la pagina del producto para ver mas datos del producto y elegir si lo quiere comprar, y si lo compra - producto.php
+
+Cuando un cliente añade un producto en el carro, se le pregunta:
+1.-cuantas unidades quiere
+2.-si quiere seguir comprando, vuelve a la pagina de productos
+3.-o si quiere ir carrito, vamos a la pagina del carrito
+anadiracarrito.php
+
+Pagina del carrito, miramos el listado de productos que tenemos, modificar, o confirmar - carrito.php
+
+Si confirmo, al cliente le pido sus datos, cuando el cliente me da los datos, formalizo el pedido - datosdecliente.php
+
+Página de confirmación de cliente - confirmacion.php
+

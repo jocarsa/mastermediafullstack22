@@ -1,0 +1,17 @@
+Tienda online
+
+Una tienda tiene productos
+Una tienda debe tener clientes
+Los clientes realizan pedidos
+Un pedido puede tener varias lineas de pedido
+Una linea de pedido puede contener X unidades de un producto
+
+Base de datos:
+-Tabla productos: nombre,descripcion,precio,cantidad,referencia
+-Tabla clientes: usuario, contraseña, nombre, apellidos, telefono, email,direccion,cp,localidad,pais,doc identi
+-Tabla pedidos: idcliente, fecha
+-Tabla lineapedido: aparece el id de pedido, el id de producto, y la cantidad de unidades
+
+Modelo de datos, MySQL
+Controladores
+Vistas
