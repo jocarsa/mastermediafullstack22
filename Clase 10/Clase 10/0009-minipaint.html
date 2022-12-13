@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+        <script>
+            
+            $(document).ready(function(){
+                // De entrada el raton no esta pulsado, creo una variable de tipo booleano
+                var pulsado = false;
+                // creo un color por defecto para cuando entramos en el programa
+                micolor = "black";
+                // Que sepas que voy a dibujar
+                var contexto = document.getElementById("lienzo").getContext("2d")
+                // Cuando en el lienzo haga click, en ese caso pulsado es true
+                $("#lienzo").mousedown(function(){
+                    pulsado = true;
+                })
+                // Cuando en el lienzo haga desclick, en ese caso pulsado es false
+                $("#lienzo").mouseup(function(){
+                    pulsado = false;
+                })
+                // Cuando muevo el raton por el lienzo
+                $("#lienzo").mousemove(function(e){
+                    // Solo en el caso de que pulsado sea igual a true
+                    if(pulsado == true){
+                        // Actualizo el color con el que tengo que pintar
+                        contexto.fillStyle = micolor;
+                        // Pinto un rectangulo de 2x2
+                        contexto.fillRect(
+                            e.offsetX,
+                            e.offsetY,
+                            2,
+                            2
+                        )
+                    }
+                })
+                // Cuando haga click sobre un boton de color
+                $(".color").click(function(){
+                    // Actualizo la variable micolor segun la propiedad que tenga ese boton
+                    micolor = $(this).attr("micolor")
+                })
+            })
+        </script>
+        <style>
+            #lienzo{border:1px solid black;}
+            button{width:20px;height:20px;}
+        </style>
+    </head>
+    <body>
+        <button class="color" style="background:red;" micolor="red"></button>
+        <button class="color" style="background:green;" micolor="green"></button>
+        <button class="color" style="background:blue;" micolor="blue"></button>
+        <button class="color" style="background:yellow;" micolor="yellow"></button>
+        <button class="color" style="background:cyan;" micolor="cyan"></button>
+        <button class="color" style="background:magenta;" micolor="magenta"></button>
+        <button class="color" style="background:black;" micolor="black"></button>
+       <canvas id="lienzo" width=512px height=512px></canvas>
+        
+    </body>
+</html>

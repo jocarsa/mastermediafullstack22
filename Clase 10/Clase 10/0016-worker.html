@@ -1,0 +1,15 @@
+<html>
+    <body>
+        <script>
+            const nucleos = navigator.hardwareConcurrency;
+            console.log("que sepas que tu sistema tiene "+nucleos+" nucleos")
+            
+            trabajador1 = new Worker("trabajador.js");
+            trabajador1.postMessage("hola")
+            
+            trabajador2 = new Worker("trabajador.js");
+            trabajador2.postMessage("hola")
+            
+        </script>
+    </body>
+</html>

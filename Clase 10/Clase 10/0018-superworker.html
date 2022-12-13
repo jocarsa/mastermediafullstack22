@@ -1,0 +1,13 @@
+<html>
+    <body>
+        <script>
+            var nucleos = 10;
+            var trabajadores = new Array()
+            
+            for(var i = 0;i<nucleos;i++){
+                trabajadores[i] = new Worker("superworker.js");
+                trabajadores[i].postMessage("hola");
+            }
+        </script>
+    </body>
+</html>
