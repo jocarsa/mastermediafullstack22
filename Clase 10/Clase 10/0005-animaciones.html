@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            #rojo{
+                width:50px;
+                height:50px;
+                background:red;
+                animation:muevemueve 10s;
+                animation-iteration-count: infinite;
+                position:relative;
+                animation-timing-function: linear;
+            }
+            @keyframes muevemueve{
+                0%{
+                    left:0px;
+                    top:0px;
+                    background:red;
+                    transform:rotate(0deg);
+                }
+                25%{
+                    left:100px;
+                    top:0px;
+                    background:green;
+                    transform:rotate(45deg);
+                }
+                50%{
+                    left:100px;
+                    top:100px;
+                    background:blue;
+                    transform:rotate(90deg);
+                }
+                75%{
+                    left:0px;
+                    top:100px;
+                    background:yellow;
+                    transform:rotate(180deg);
+                }
+                100%{
+                    left:0px;
+                    top:0px;
+                    background:red;
+                    transform:rotate(360deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="rojo"></div>
+    </body>
+</html>

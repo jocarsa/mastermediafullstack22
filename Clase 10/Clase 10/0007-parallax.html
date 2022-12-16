@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function(){
+                $(document).scroll(function(){
+                    // Medimos la distancia del scroll para saber cuánto hemos bajado
+                    var distancia = $(document).scrollTop()
+                    // Sacamos la distancia por consola con fines informativos
+                    console.log("scrolleando: "+distancia)
+                    // Al elemento cambia, le cambiamos el fondo segun lo que hayas scrolleado
+                    $("#cambia").css("background","hsl("+(((distancia/10)%255))+",100%,50%)")
+                    // Al elemento cambia, lo movemos hacia la izquierda segun lo que hayas scrolleado
+                    $("#cambia").css("left",(distancia/10)+"px")
+                    // Al elemento cambia2, le cambiamos la distancia horizontal aleatoriamente
+                    $("#cambia2").css("left",((Math.random()-0.5)*50)+"px")
+                    // En el caso de que el scroll sea mayor que 600 y menor que 800
+                    if(distancia > 600 && distancia < 800){
+                        // Al elemento cambia2 le activamos la animacion
+                        $("#cambia2").addClass("animado")
+                        
+                    }else{ // En caso contrario
+                        // Al elemento cambia2 le quitamos la animacion
+                        $("#cambia2").removeClass("animado")
+                    }
+                    // Para conocer la posicion de un elemento con respecto a la esquina
+                    var posicion = $("#cambia2").offset()
+                    console.log("posicion: "+posicion.left+","+posicion.top)
+                })
+            })
+        </script>
+        <style>
+            body{
+                background:grey;
+            }
+            
+            .bloque{
+                width:80%;
+                height:200px;
+                background:white;
+                margin:auto;
+                margin-top:2px;
+            }
+            #cambia{
+                background:red;
+                position:relative;
+            }
+            #cambia2{
+                position:relative;
+                background:yellow; 
+            }
+            .animado{
+                animation:gira 5s;
+                animation-iteration-count: 1;
+            }
+            @keyframes gira{
+                0%{transform:rotate(0deg);}
+                100%{transform:rotate(360deg);}
+            }
+        </style>
+    </head>
+    <body>
+        <div class="bloque"></div>
+        <div class="bloque"></div>
+        <div class="bloque" id="cambia"></div>
+        <div class="bloque"></div>
+        <div class="bloque"></div>
+        <div class="bloque" id="cambia2"></div>
+        <div class="bloque"></div>
+        <div class="bloque"></div>
+        <div class="bloque"></div>
+        <div class="bloque"></div>
+        <div class="bloque"></div>
+        <div class="bloque"></div>
+        <div class="bloque"></div>
+        <div class="bloque"></div>
+        <div class="bloque"></div>
+        <div class="bloque"></div>
+        <div class="bloque"></div>
+        <div class="bloque"></div>
+    </body>
+</html>

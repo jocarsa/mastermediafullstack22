@@ -1,0 +1,53 @@
+<html>
+    <body>
+        <script src="three.js"> </script>
+        <script>
+            
+            ///////////////////////////MUNDO 3D ///////////////////////////////////////////////////////////
+            
+            // Un proyecto 3D requiere una escena, porque la escena es el elemento jerárquico de nivel superior
+            const miescena = new THREE.Scene();
+            // No puedo ver nada en un mundo 3D si no lo miro a través de una cámara
+            // 25 es la apertura focal de la cámara
+            // 0.1 es el recorte cercano
+            // 1000 es el recorte lejano
+            const micamara = new THREE.PerspectiveCamera(25,window.innerWidth/window.innerHeight,0.1,1000);
+            // Un representador es un algoritmo que se encarga de coger un mundo 3D y presentártelo en una pantalla 2D
+            const representador = new THREE.WebGLRenderer();
+            // Especifico el tamaño del representador
+            representador.setSize(window.innerWidth,window.innerHeight);
+            // En el cuerpo del documento HTML, creo un elemento canvas pero este es 3D
+            document.body.appendChild(representador.domElement);
+            // Creo una primera geometria para el cubo
+            
+            //////////////////////// METO COSAS EN EL MUNDO 3d ///////////////////////////////////////////
+            
+            // En primer lugar creo una caja 
+            const geometria = new THREE.BoxGeometry(1,1,1);
+            // Creo un nuevo material, que es de tipo Phong, con un color rojo
+            const mimaterial = new THREE.MeshPhongMaterial({color:0xff0000})
+            // Creo una geometría que une la malla del cubo con el material rojo, solo existe en memoria
+            const cubo = new THREE.Mesh(geometria,mimaterial)
+            // Lo añado realmente a la escena
+            miescena.add(cubo)
+            
+            // Creo un foco que ilumina de color blanco
+            const foco = new THREE.SpotLight( 0xffffff );
+            // Este foco está situado arriba
+            foco.position.set( 0, 130, 0 );
+            // Añado el foco a la escena
+            miescena.add( foco );
+            
+            // Creo un poco de luz amiental
+            const luzambiental = new THREE.AmbientLight( 0x404040 ); // soft white light
+            miescena.add( luzambiental );
+            
+            // Muevo la camara un poco hacia atrÃ¡s
+            micamara.position.z = 25;
+            cubo.rotation.x = Math.PI/5;
+            cubo.rotation.y = Math.PI/5;
+            representador.render(miescena,micamara);
+            
+        </script>
+    </body>
+</html>
